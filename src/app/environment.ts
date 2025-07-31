@@ -1,3 +1,4 @@
 export const environment  = {
-    apiUrl:'http://localhost:5000/api'
+    production:true,
+    apiUrl:'https://sp-backend-uky8.onrender.com/api'
 }
