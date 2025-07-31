@@ -1,0 +1,151 @@
+<div
+  class="container-fluid parent"
+  [style]="formToggle ? 'display:block' : 'display:none'"
+>
+  <div class="form-div">
+    <form [formGroup]="serviceForm" class="form">
+      <p class="cross" (click)="toggleFrom()"><span>&times;</span></p>
+      <div class="input-div">
+        <p>
+          <input
+            type="text"
+            placeholder="enter title"
+            class="form-control"
+            formControlName="title"
+          />
+          <span
+            *ngIf="
+              this.serviceForm.controls['title'].hasError('required') &&
+              this.serviceForm.controls['title'].touched
+            "
+            class="text-danger"
+            >title is required</span
+          >
+        </p>
+      </div>
+      <div class="input-div">
+        <p>
+          <input
+            type="text"
+            placeholder="enter description (max length 150)"
+            class="form-control"
+            maxlength="150"
+            formControlName="description"
+          />
+          <span
+            *ngIf="
+              this.serviceForm.controls['description'].hasError('required') &&
+              this.serviceForm.controls['description'].touched
+            "
+            class="text-danger"
+            >description is required</span
+          >
+        </p>
+      </div>
+      <div class="input-div-count-active">
+        <p>
+          <input
+            type="text"
+            placeholder="enter sharpy count"
+            class="form-control"
+            formControlName="sharpyCount"
+          />
+          <!-- <span
+            *ngIf="
+              this.serviceForm.controls['sharpyCount'].hasError('required') &&
+              this.serviceForm.controls['sharpyCount'].touched
+            "
+            class="text-danger"
+            >sharpyCount is required</span
+          > -->
+        </p>
+        <p>
+          <input
+            type="text"
+            placeholder="enter led count"
+            class="form-control"
+            formControlName="ledScreenCount"
+          />
+        </p>
+      </div>
+
+      <div>
+        <p>
+          <input
+            type="text"
+            placeholder="enter price"
+            class="form-control"
+            formControlName="price"
+          />
+          <span
+            *ngIf="
+              this.serviceForm.controls['price'].hasError('required') &&
+              this.serviceForm.controls['price'].touched
+            "
+            class="text-danger"
+            >price is required</span
+          >
+        </p>
+        <p>
+          <select name="" id="" class="form-control" formControlName="btn">
+            <option value="">select Type :</option>
+            <option value="event">event</option>
+            <option value="rent">rent</option>
+          </select>
+          <span
+            *ngIf="
+              this.serviceForm.controls['btn'].hasError('btn') &&
+              this.serviceForm.controls['btn'].touched
+            "
+            class="text-danger"
+            >type is required</span
+          >
+        </p>
+      </div>
+      <div class="isActive">
+        <p>serviceActive</p>
+        <p class="mt-1">
+          <input
+            type="checkbox"
+            name=""
+            id=""
+            class="form-check"
+            formControlName="isActive"
+          />
+        </p>
+      </div>
+      <div>
+        <input
+          type="file"
+          name="serviceImgUpload"
+          id=""
+          formControlName="serviceImgUpload"
+          (change)="handleInputFile($event)"
+        />
+        <span
+          *ngIf="
+            this.serviceForm.controls['serviceImgUpload'].hasError(
+              'required'
+            ) && this.serviceForm.controls['serviceImgUpload'].touched
+          "
+          class="text-danger"
+          >image is is required</span
+        >
+      </div>
+      <div class="text-center">
+        <p class="m-0 mt-3">
+          <button
+            *ngIf="!editServiceData"
+            class="btn btn-success"
+            (click)="addService()"
+          >
+            Add
+          </button>
+        </p>
+        <p class="m-0 mt-3" *ngIf="editServiceData" (click)="editService()">
+          <button class="btn btn-success">Edit</button>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>

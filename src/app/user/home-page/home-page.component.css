@@ -1,0 +1,241 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.parent {
+  width: 100%;
+  min-height: 100%;
+  background: linear-gradient(to bottom, #0d0d0d, #1a1a2e, #000000);
+  color: white;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+}
+
+.home-div {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+  padding: 1rem;
+}
+
+.home-welcome-text {
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 1rem;
+  animation: sp-heading 2s ease-in-out;
+}
+
+@keyframes sp-heading {
+  0% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.home-welcome-text > p {
+  margin-bottom: 0;
+  background: linear-gradient(90deg, #00ffff, #a020f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home-quote {
+  margin-top: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  animation: home-quote 1s ease-in-out;
+}
+
+@keyframes home-quote {
+  0% {
+    transform: translateY(25px);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.home-quote > p {
+  font-weight: bold;
+  color: rgb(237, 233, 233);
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 0;
+  font-size: 2rem;
+}
+
+.service_section {
+  margin-top: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.service_section > p:nth-child(1) {
+  margin-bottom: 2px;
+  font-size: 2rem;
+  color: rgb(248, 247, 245);
+}
+
+.service_section > ul {
+  width: 100%;
+  max-width: 300px;
+  padding: 0 1rem;
+  margin-left: 1.6rem;
+  text-align: start;
+  font-size: 0.9rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.service-text {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: white;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.service-text-o {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: white;
+  margin-right: 10px;
+  vertical-align: middle;
+  animation: service-text 3s infinite;
+}
+
+@keyframes service-text {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1.3);
+  }
+}
+
+.event_type_div {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.event_type_div > p:nth-child(1) {
+  font-size: 2rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.event-option {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.event-option > p {
+  background: linear-gradient(90deg, #00ffff, #ff00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.why-choose-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.why-choose-div > p {
+  font-size: 2rem;
+}
+
+.quality-text {
+  /* border: 1px solid white; */
+  margin-right: 1rem;
+}
+
+.quality-text > p {
+  color: white;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.button-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.button-div > p:nth-child(1) {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+}
+
+.nav-btn {
+  margin-top: 0.5rem;
+  background-color: white;
+  border: grey;
+  padding: 5px 15px 5px 15px;
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .home-welcome-text {
+    font-size: 2rem;
+  }
+
+  .home-quote > p {
+    font-size: 1.2rem;
+  }
+
+  .event-option {
+    align-items: center;
+  }
+
+  .event-option > p {
+    font-size: 1rem;
+  }
+
+  .service_section > ul {
+    font-size: 0.85rem;
+  }
+
+  .why-choose-div > p {
+    font-size: 1.5rem;
+  }
+
+  .quality-text {
+    /* border: 1px solid white; */
+    margin-left: 4rem;
+  }
+
+  .button-div > p:nth-child(1) {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,54 @@
+<div class="parent">
+  @for(data of serviceData; track data._id){
+  <div class="service-card">
+    <div class="card-image">
+      <!-- <img
+        [src]="'http://localhost:5000/serviceUploadsImg/' + data.serviceImgUpload"
+        alt="Service Image"
+      /> -->
+      <img
+        *ngIf="isImage(data.serviceImgUpload)"
+        [src]="
+          'http://localhost:5000/serviceUploadsImg/' + data.serviceImgUpload
+        "
+        alt=""
+      />
+      <iframe
+        *ngIf="isPDF(data.serviceImgUpload)"
+        [src]="getSanitizedUrl(data.serviceImgUpload)"
+        width="100%"
+        height="500px"
+      ></iframe>
+    </div>
+
+    <div class="card-content">
+      <div class="card-title">
+        <p class="m-0"><strong>Title:</strong> {{ data.title }}</p>
+      </div>
+
+      <div class="card-description" style="height: auto">
+        <p style="line-height: 1.5; word-break: break-word; margin: 0">
+          <strong>Description:</strong> {{data.description}}
+        </p>
+      </div>
+
+      <div class="card-counts">
+        <p><strong>Sharpy Count:</strong>{{ data.sharpyCount || "N/A" }}</p>
+        <p><strong>LED Count:</strong>{{ data.ledScreenCount || "N/A" }}</p>
+      </div>
+
+      <div class="card-price">
+        <p class="" style="line-height: 2px">
+          <strong>Price:</strong> {{ data.price }} / day
+        </p>
+      </div>
+
+      <div class="card-action">
+        <button *ngIf="data.isActive" (click)="navToOrder(data.btn)">
+          {{ data.btn || "click" }}
+        </button>
+      </div>
+    </div>
+  </div>
+  }
+</div>

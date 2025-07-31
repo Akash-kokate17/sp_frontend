@@ -1,0 +1,192 @@
+<form class="form_div container-fluid" [formGroup]="eventForm">
+  <div class="input_parent_div">
+    <div class="input_div">
+      <p class="m-1">
+        Name:<input
+          type="text"
+          class="form-control"
+          autofocus
+          formControlName="name"
+        />
+        <span
+          *ngIf="
+            eventForm.controls['name'].hasError('required') &&
+            eventForm.controls['name'].touched
+          "
+          class="text-danger"
+          >Name is required</span
+        >
+      </p>
+      <p class="m-1">
+        Email:<input type="text" class="form-control" formControlName="email" readonly/>
+        <span
+          class="text-danger"
+          *ngIf="eventForm.controls['email'].hasError('pattern')"
+          >enter valid email</span
+        >
+        <span
+          class="text-danger"
+          *ngIf="
+            eventForm.controls['email'].hasError('required') &&
+            eventForm.controls['email'].touched
+          "
+          >enter valid email</span
+        >
+      </p>
+    </div>
+    <div class="input_div">
+      <p class="m-1">
+        EventType:<select class="form-select" formControlName="eventType">
+          <option value="">Select Event</option>
+          <option value="Birthday">Birthday</option>
+          <option value="Marriage">Marriage</option>
+          <option value="Dahihandi">Dahihandi</option>
+          <option value="Clg Event">Clg Event</option>
+          <option value="Mandav tahala">Mandav tahala</option>
+        </select>
+        <span
+          *ngIf="
+            eventForm.controls['eventType'].hasError('required') &&
+            eventForm.controls['eventType'].touched
+          "
+          class="text-danger"
+          >Event Type is required</span
+        >
+      </p>
+      <p class="m-1">
+        ServiceName:<select class="form-select" formControlName="serviceName">
+          <option value="">Select Service</option>
+          <option value="Sharpy Light">Sharpy Light</option>
+          <option value="Led Screen">Led Screen</option>
+          <option value="Sharpy Light &Led Screen">
+            Sharpy Light &Led Screen
+          </option>
+        </select>
+        <span
+          *ngIf="
+            eventForm.controls['serviceName'].hasError('required') &&
+            eventForm.controls['serviceName'].touched
+          "
+          class="text-danger"
+          >Service name is required</span
+        >
+      </p>
+    </div>
+    <div class="input_div">
+      <p class="m-1">
+        Sharpy Count:<select class="form-select" formControlName="sharpyCount">
+          <option value="">Select Count</option>
+          @for(num of count; track num){
+          <option [value]="num">{{ num }}</option>
+          }
+        </select>
+        <span
+          *ngIf="
+            eventForm.controls['sharpyCount'].hasError('required') &&
+            eventForm.controls['sharpyCount'].touched
+          "
+          class="text-danger"
+          >Sharpy count is required</span
+        >
+      </p>
+      <p class="m-1">
+        Led Screen Count:<select
+          class="form-select"
+          formControlName="ledScreenCount"
+        >
+          <option value="">Select Count</option>
+          @for(num of count; track num){
+          <option [value]="num">{{ num }}</option>
+          }
+        </select>
+        <span
+          *ngIf="
+            eventForm.controls['ledScreenCount'].hasError('required') &&
+            eventForm.controls['ledScreenCount'].touched
+          "
+          class="text-danger"
+          >Led screen count is required</span
+        >
+      </p>
+    </div>
+    <div class="input_div">
+      <p class="m-1">
+        Phone No.:<input
+          type="text"
+          class="form-control"
+          formControlName="phoneNo"
+        />
+        <span
+          *ngIf="
+            eventForm.controls['phoneNo'].hasError('required') &&
+            eventForm.controls['phoneNo'].touched
+          "
+          class="text-danger"
+          >Phone number is required</span
+        >
+        <span class="text-danger" *ngIf="eventForm.controls['phoneNo'].hasError('pattern')">Invalid phone number</span>
+      </p>
+      <p class="m-1">
+        Location:<input
+          list="location"
+          class="form-control"
+          formControlName="location"
+          placeholder="Service available area"
+        />
+        <datalist id="location">
+          <option value="hawely">hawely</option>
+          <option value="khed">khed</option>
+          <option value="maval">maval</option>
+          <option value="pune all city area">pune all city area</option>
+        </datalist>
+        <span
+          *ngIf="
+            eventForm.controls['location'].hasError('required') &&
+            eventForm.controls['location'].touched
+          "
+          class="text-danger"
+          >location is required</span
+        >
+      </p>
+    </div>
+    <div class="input_div w-100 d-flex text-start">
+      <p
+        class="m-1 date_p d-flex align-items-center flex-column text-start w-100"
+      >
+        <span class="text-start">Event Booking Date:</span
+        ><input
+          type="date"
+          class="form-control"
+          formControlName="eventBookingDate"
+        />
+        <span
+          class="text-danger"
+          *ngIf="eventForm.controls['eventBookingDate'].hasError('pattern')"
+          >Enter valid Date</span
+        >
+        <span
+          class="text-danger"
+          *ngIf="
+            eventForm.controls['eventBookingDate'].hasError('required') &&
+            eventForm.controls['eventBookingDate'].touched
+          "
+          >Date is required</span
+        >
+      </p>
+    </div>
+    <div class="input_div m-2">
+      <textarea
+        name=""
+        id=""
+        placeholder="Enter your message..."
+        formControlName="clientMsg"
+      >
+      </textarea>
+    </div>
+    <div class="text-center mt-2">
+      <button class="btn btn-success" (click)="sendEventOrder()">
+        Send Event Order
+      </button>
+    </div>
+  </div>
+</form>

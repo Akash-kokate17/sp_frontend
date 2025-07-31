@@ -1,0 +1,28 @@
+<div class="parent container-fluid">
+  <div class="second_div">
+    @for(img of images;track img){
+    <div class="gallery-div">
+      <div class="img-div">
+        <img [src]="'assets/images/' + img" alt="" />
+      </div>
+      <div class="text-div"><p>Event Image</p></div>
+    </div>
+    }
+  </div>
+</div>
+
+<!-- // video -->
+<div class="parent-video">
+  <div class="video-outer-div">
+    @for(video of videos;track video){
+    <div class="video-div">
+      <div>
+        <video class="video" controls #videoElement (play)="onVideoPlay($event)">
+          <source [src]="'assets/video/' + video" type="video/mp4"/>
+        </video>
+      </div>
+      <div class="text-div"><p>Event Video</p></div>
+    </div>
+    }
+  </div>
+</div>

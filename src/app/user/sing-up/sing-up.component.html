@@ -1,0 +1,123 @@
+<form [formGroup]="signUpForm" class="form container-fluid">
+  <div class="form_div">
+    <div class="d-flex justify-content-center">
+      <img
+        class="singUp_img"
+        src="assets/images/profile-icon.webp"
+      />
+    </div>
+    <div>
+      <p class="mb-0">
+        Name:<input name="name" formControlName="name" class="form-control" autofocus />
+        <span
+          *ngIf="
+            signUpForm.controls['name'].hasError('required') &&
+            signUpForm.controls['name'].touched
+          "
+          class="m-0 text-danger"
+          >Name is required</span
+        >
+      </p>
+    </div>
+    <div>
+      <p class="mb-0">
+        email:<input
+          type="email"
+          name="email"
+          formControlName="email"
+          class="form-control"
+        />
+        <span
+          *ngIf="
+            signUpForm.controls['email'].hasError('required') &&
+            signUpForm.controls['email'].touched
+          "
+          class="m-0 text-danger"
+          >email is required</span
+        >
+        <span
+          *ngIf="signUpForm.controls['email'].hasError('pattern')"
+          class="text-danger"
+          >invalid Email</span
+        >
+      </p>
+    </div>
+    <div>
+      <p class="mb-0">
+        phoneNo:<input
+          type="text"
+          name="phoneNo"
+          formControlName="phoneNo"
+          class="form-control"
+          maxlength="10"
+          minlength="10"
+        />
+        <span
+          *ngIf="
+            signUpForm.controls['phoneNo'].hasError('required') &&
+            signUpForm.controls['phoneNo'].touched
+          "
+          class="m-0 text-danger"
+          >phone no. is required</span
+        >
+        <span *ngIf="signUpForm.controls['phoneNo'].hasError('pattern')"
+          >invalid phone number</span
+        >
+      </p>
+    </div>
+    <div>
+      <p class="mb-0">
+        password:<input
+          type="password"
+          name="password"
+          formControlName="password"
+          class="form-control"
+        />
+        <span
+          *ngIf="
+            signUpForm.controls['password'].touched &&
+            signUpForm.controls['password'].hasError('passwordStrength')
+          "
+          class="m-0 text-danger"
+          >password is required & Password must be at least 8 characters,
+          include uppercase, lowercase, number, and special character</span
+        >
+      </p>
+    </div>
+    <div>
+      <p class="mb-0">
+        confirm password:<input
+          type="password"
+          name="cnfPassword"
+          formControlName="cnfPassword"
+          class="form-control"
+        />
+        <span
+          *ngIf="
+            signUpForm.get('cnfPassword')?.hasError('passwordMismatch') &&
+            signUpForm.get('cnfPassword')?.dirty
+          "
+          class="text-danger"
+        >
+          Passwords do not match
+        </span>
+        <span
+          *ngIf="
+            signUpForm.controls['cnfPassword'].hasError('required') &&
+            signUpForm.controls['cnfPassword'].touched
+          "
+          class="text-danger"
+          >confirm password is required</span
+        >
+      </p>
+    </div>
+    <div class="d-flex justify-content-evenly mt-2">
+      <p class="mb-0"><button class="btn btn-primary" routerLink="/login">Login</button></p>
+      <p class="mb-0">
+        <button class="btn btn-success" (click)="signUp(signUpForm)">
+          Sing Up
+        </button>
+      </p>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,33 @@
+.form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form_div {
+  width: 30%;
+  background-color: rgba(237, 232, 232, 0.2);
+  backdrop-filter: blur(10px);
+  margin-top: 1rem;
+  border: 1px solid rgb(176, 173, 173);
+  border-radius: 1rem;
+  padding: 1rem;
+
+}
+
+.singUp_img {
+  height: 8rem;
+  width: 8rem;
+}
+
+@media (max-width: 768px) {
+  .form_div {
+    width: 100%;
+    margin-top: 1rem;
+    border: 1px solid rgb(176, 173, 173);
+    border-radius: 1rem;
+    padding: 1rem;
+  }
+}

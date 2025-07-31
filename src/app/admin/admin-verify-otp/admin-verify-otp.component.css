@@ -1,0 +1,46 @@
+.form {
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form_div {
+  width: 30%;
+  border: 1px solid rgb(176, 173, 173);
+  background-color: rgba(237, 232, 232, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.verify_img {
+  height: 2rem;
+}
+
+.rainbow-text {
+  display: flex;
+  align-items: center;
+  gap: 0.4;
+  font-size: 2rem;
+  font-weight: bold;
+  background: linear-gradient(
+    90deg,
+    red,
+    orange,
+    rgb(255, 170, 0),
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@media(max-width:768px){
+    .form_div{
+        width: 100%;
+    }
+}

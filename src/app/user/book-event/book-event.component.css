@@ -1,0 +1,72 @@
+.form_div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.input_parent_div {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(176, 173, 173);
+  border-radius: 1rem;
+  background-color: rgba(237, 232, 232, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.input_div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  justify-content: space-between;
+}
+
+.input_div > p {
+  flex: 1 1 45%;
+  min-width: 200px;
+}
+
+.input_div > p > input,
+.input_div > p > select {
+  width: 100%;
+}
+
+.input_div > textarea {
+  width: 100%;
+  min-height: 5rem;
+  padding: 0.5rem;
+  resize: vertical;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+.input_div > .date_p > input[type="date"] {
+  width: 45%;
+}
+
+@media (max-width: 768px) {
+  .input_div {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .input_div > p {
+    flex: 1 1 100%;
+  }
+
+  .input_div > textarea {
+    width: 100%;
+  }
+
+  .form_div {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}

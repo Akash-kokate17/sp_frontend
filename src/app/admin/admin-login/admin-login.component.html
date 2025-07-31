@@ -1,0 +1,55 @@
+<form
+  class="container-fluid d-flex justify-content-center align-items-center login_form"
+  [formGroup]="adminLogin"
+>
+  <div class="form_div">
+    <div class="d-flex justify-content-center align-items-center">
+      <img class="login_img" src="assets/images/profile-icon.webp" alt="" />
+    </div>
+    <div>
+      <p class="mb-0">
+        Email:<input
+          type="email"
+          class="form-control"
+          formControlName="email"
+          autofocus
+        />
+        <span
+          *ngIf="
+            adminLogin.controls['email'].hasError('required') &&
+            adminLogin.controls['email'].touched
+          "
+          class="m-0 text-danger"
+          >email is required</span
+        >
+        <span
+          *ngIf="adminLogin.controls['email'].hasError('pattern')"
+          class="m-0 text-danger"
+          >plz enter valid email</span
+        >
+      </p>
+    </div>
+    <div class="mt-2">
+      <p>
+        Password:<input
+          type="password"
+          class="form-control mb-0"
+          formControlName="password"
+        />
+        <span
+          *ngIf="
+            adminLogin.controls['password'].hasError('required') &&
+            adminLogin.controls['password'].touched
+          "
+          class="m-0 text-danger"
+          >password is required</span
+        >
+      </p>
+    </div>
+    <div class="d-flex justify-content-evenly">
+      <p>
+        <button class="btn btn-success" (click)="AdminLogin()">login</button>
+      </p>
+    </div>
+  </div>
+</form>

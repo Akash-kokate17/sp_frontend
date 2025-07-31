@@ -1,0 +1,71 @@
+<div class="table-wrapper">
+  <div class="select-section">
+    <select class="form-select" (change)="selectedType($event)">
+      <option value="event">Event Orders</option>
+      <option value="rent">Rent Orders</option>
+    </select>
+  </div>
+
+  <table class="table table-bordered table-striped table-hover">
+    <thead>
+      <tr class="th-parent">
+        <th>Name</th>
+        <th>Phone No.</th>
+        <th>Email</th>
+        <th *ngIf="selectedTypeValue === 'event'">Event Type</th>
+        <th>Location</th>
+        <th>Service Name</th>
+        <th>Sharpy Count</th>
+        <th>LED Screen Count</th>
+        <th>Client Msg</th>
+        <th>Order Date</th>
+        <th>Event/Rent Date</th>
+        <th>Status</th>
+        <th>Status Update</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      @for (event of renderOrder; track event._id) {
+        <tr class="tbody-tr">
+          <td>{{ event.name }}</td>
+          <td>{{ event.phoneNo }}</td>
+          <td>{{ event.email }}</td>
+          <td *ngIf="event.eventType">{{ event.eventType }}</td>
+          <td>{{ event.location || event.address }}</td>
+          <td>{{ event.serviceName || "rent order" }}</td>
+          <td>{{ event.sharpyCount || event.sharpyLightCount }}</td>
+          <td>{{ event.ledScreenCount }}</td>
+          <td>{{ event.clientMsg || event.clientNote }}</td>
+          <td>{{ (event.orderDate || event.rentDate) | date: 'shortDate' }}</td>
+          <td>{{ (event.eventBookingDate || event.createdAt) | date: 'shortDate' }}</td>
+          <td>{{ event.status }}</td>
+          <td>
+            <button class="btn btn-success" (click)="updateStatusEvent(event)">
+              Update
+            </button>
+          </td>
+        </tr>
+      } @empty {
+        <tr>
+          <td colspan="13" class="text-center fw-bold fs-5">No data found</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
+
+<!-- Status Update Modal -->
+<div class="status-parent" [style]="flag ? 'display:block' : 'display:none'">
+  <div class="status-div">
+    <p class="cross" (click)="toggleCard()"><span>&times;</span></p>
+    <select class="form-control" [(ngModel)]="selectStatus">
+      <option value="" disabled selected>Select status</option>
+      <option value="Pending">Pending</option>
+      <option value="Confirmed">Confirmed</option>
+      <option value="Completed">Completed</option>
+      <option value="Cancelled">Cancelled</option>
+    </select>
+    <button class="btn btn-success mt-4" (click)="updateStatus()">Update</button>
+  </div>
+</div>

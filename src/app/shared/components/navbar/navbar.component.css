@@ -1,0 +1,54 @@
+.nav_parent_div {
+  background-color: #0d6efd;
+  color: #ffffff;
+  overflow: auto;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.select_option_phone {
+  display: none;
+}
+
+.select-option {
+  background-color: #0d6efd;
+  color: white;
+  border: 1px solid black;
+}
+
+@media (max-width: 765px) {
+  .select_option_phone {
+    display: block !important;
+  }
+  .nav_parent_div {
+    font-size: 0.8rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .hide_min_option {
+    display: none;
+  }
+
+  .select-option {
+    background-color: #0d6efd;
+    color: white;
+    cursor: pointer;
+  }
+
+  .select-option option {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+  }
+}
+
+.logo{
+  font-family: 'Poppins', sans-serif; /* Clean & modern font */
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #FFA500; /* Bright yellow-orange */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+

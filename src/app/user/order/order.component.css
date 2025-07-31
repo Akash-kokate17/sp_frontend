@@ -1,0 +1,24 @@
+.order_main_div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.book-event-input {
+  color: #1e90ff; /* Dodger blue */
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.order-heading {
+  font-size: 2rem;
+  color: black;
+  font-family: sans-serif;
+}
+
+.input-circle[type="radio"] {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+

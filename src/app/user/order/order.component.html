@@ -1,0 +1,33 @@
+<div class="text-center order-heading">
+  <p>Select Order Type</p>
+</div>
+
+<div class="order_main_div d-flex align-items-center gap-3">
+  <!-- Book Event -->
+  <div class="d-flex align-items-center gap-2">
+    <input
+      type="radio"
+      name="orderType"
+      value="bookEvent"
+      class="input-circle"
+      [(ngModel)]="selectedValue"
+      (ngModelChange)="handleInput($event)"
+    />
+    <label for="bookEvent" class="mb-0 book-event-input">Book Event</label>
+  </div>
+
+  <!-- Rent Material -->
+  <div class="d-flex align-items-center gap-2">
+    <input
+      type="radio"
+      name="orderType"
+      value="rentMaterial"
+      class="input-circle"
+      [(ngModel)]="selectedValue"
+      (ngModelChange)="handleInput($event)"
+    />
+    <label for="rentMaterial" class="mb-0 book-event-input">Rent Material</label>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

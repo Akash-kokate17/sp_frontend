@@ -1,0 +1,77 @@
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  position: relative;
+}
+
+table {
+  min-width: 1000px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.th-parent > th {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.tbody-tr > td {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+}
+
+.status-parent {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.status-div {
+  background: rgb(243, 242, 242);
+  width: 400px;
+  height: 200px;
+  border: 1px solid rgb(28, 28, 28);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  position: relative;
+}
+
+.cross {
+  height: 1.5rem;
+  width: 1.5rem;
+  border: 2px solid black;
+  border-radius: 50%;           
+  display: flex;                
+  align-items: center;         
+  justify-content: center;      
+  cursor: pointer;             
+  background-color: #f8f8f8;    
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+
+.cross > span {
+  font-size: 1rem;
+  line-height: 1;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.select-section{
+  display: flex;
+  justify-content: end;
+  align-items: end;
+}
+
+.select-section>select{
+  display: flex;
+  width: 200px;
+  margin: 10px;
+}

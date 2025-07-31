@@ -1,0 +1,57 @@
+.parent {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-div {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  position: relative;
+  width: 400px;
+  margin-top: 10px;
+  border: 1px solid rgb(192, 190, 190);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background-color: rgb(249, 249, 250);
+}
+
+.cross {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid black;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 1.5rem;
+  display: inline-block;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.cross > span {
+  font-size: 1.5rem; /* Increase this to make it larger */
+  display: inline-block;
+  line-height: 0;
+}
+
+.input-div-count-active{
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.isActive{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: bold;
+}
+
+
