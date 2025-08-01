@@ -23,6 +23,7 @@ import { userLoginedGuard } from './guards/user-logined.guard';
 import { orderGuardGuard } from './guards/order-guard.guard';
 import { adminVerifiedGuard } from './guards/admin-verified.guard';
 import { HelpComponent } from './user/help/help.component';
+import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 
 export const routes: Routes = [
   { path: 'singUp', component: SingUpComponent,canActivate:[userLoginedGuard] },
@@ -61,5 +62,6 @@ export const routes: Routes = [
       {path:'completed',component:CompletedComponent},
       {path:'cancelled',component:CancelledComponent},
     ]
-  }
+  },
+  {path:"**",component:NotFoundComponent}
 ];

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">sharpy light</string>
+    <string name="title_activity_main">sharpy light</string>
+    <string name="package_name">com.sp.events</string>
+    <string name="custom_url_scheme">com.sp.events</string>
+</resources>
