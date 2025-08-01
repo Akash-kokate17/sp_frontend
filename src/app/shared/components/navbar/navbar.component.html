@@ -10,13 +10,14 @@
     <li class="hide_min_option" style="cursor: pointer;" (click)="handleAminRoute()">Admin</li>
     <li class="hide_min_option" style="cursor: pointer;" routerLink="help">Help</li>
     <li class="select_option_phone" style="cursor: pointer;">
-      <select name="" id="" class="select-option border-0" (change)="handleRouting($event)">
-        <option>More</option>
-        <option value="gallery" style="cursor: pointer;">Gallery</option>
-        <option value="" style="cursor: pointer;" (click)="handleSingUpAndLogin()">{{flag?'logout':'sing up'}}</option>
-        <option value="admin" style="cursor: pointer;" (click)="handleAminRoute()">Admin</option>
-        <option value="help" style="cursor: pointer;" style="cursor: pointer;" routerLink="help">Help</option>
-      </select>
+     <select class="select-option border-0" (change)="handleRouting($event)">
+  <option value="">More</option>
+  <option value="gallery">Gallery</option>
+  <option value="signupOrLogout">{{ flag ? 'logout' : 'sign up' }}</option>
+  <option value="admin">Admin</option>
+  <option value="help">Help</option>
+</select>
+
     </li>
   </ul>
   <ul class="d-flex align-items-center list-unstyled gap-3 m-2">

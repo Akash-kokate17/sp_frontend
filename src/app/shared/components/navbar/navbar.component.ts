@@ -42,8 +42,25 @@ export class NavbarComponent {
   }
 
   handleRouting(e: any) {
-    const navName = e.target.value;
-    this.router.navigate([`/${navName}`]);
+    const value = e.target.value;
+
+    switch (value) {
+      case 'gallery':
+      case 'help':
+        this.router.navigate([`/${value}`]);
+        break;
+
+      case 'admin':
+        this.handleAminRoute();
+        break;
+
+      case 'signupOrLogout':
+        this.handleSingUpAndLogin();
+        break;
+
+      default:
+        break;
+    }
   }
 
   ngOnInit() {
@@ -62,12 +79,12 @@ export class NavbarComponent {
     }
   }
 
-  handleOrderRoute(){
-    const user = this.singUpS.get('otpVerified')
-    if(user){
-      this.router.navigate(['/order'])
-    }else{
-      Swal.fire('you have to login for give a order')
+  handleOrderRoute() {
+    const user = this.singUpS.get('otpVerified');
+    if (user) {
+      this.router.navigate(['/order']);
+    } else {
+      Swal.fire('you have to login for give a order');
     }
   }
 }
