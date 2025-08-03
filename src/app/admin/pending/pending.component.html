@@ -41,7 +41,7 @@
           <td>{{ (event.orderDate || event.rentDate) | date: 'shortDate' }}</td>
           <td>{{ (event.eventBookingDate || event.createdAt) | date: 'shortDate' }}</td>
           <td>{{ event.status }}</td>
-          <td *ngIf="selectedTypeValue === 'rent'"><a [href]="'http://localhost:5000/uploads/'+event.fileName" target="_blank">download</a></td>
+          <td *ngIf="selectedTypeValue === 'rent'"><a [href]="'https://sp-backend-uky8.onrender.com/'+event.fileName" target="_blank">download</a></td>
           <td>
             <button class="btn btn-success" (click)="updateStatusEvent(event)">
               Update
