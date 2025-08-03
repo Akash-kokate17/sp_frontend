@@ -39,7 +39,7 @@
         <p><span>Sharpy Count:</span>{{ service.sharpyCount }}</p>
       </div>
       <div class="d-flex justify-content-evenly mt-2 buttons-div">
-        <p><button class="btn btn-primary">event</button></p>
+        <p><button class="btn btn-primary">{{service.btn}}</button></p>
         <p><button class="btn btn-success"(click)="editService(service)">Edit</button></p>
         <p><button class="btn btn-danger" (click)="deleteEvent(service._id)">Delete</button></p>
       </div>
