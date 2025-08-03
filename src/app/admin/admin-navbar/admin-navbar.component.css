@@ -8,6 +8,12 @@
   overflow: hidden;
 }
 
+li.active {
+  border-bottom: 2px solid white ;
+  border-radius:1%;
+}
+
+
 .ul-div {
   display: flex;
   flex-wrap: wrap;

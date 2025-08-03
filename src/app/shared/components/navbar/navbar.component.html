@@ -3,13 +3,13 @@
 >
   <ul class="d-flex align-items-center gap-3 m-2 list-unstyled">
     <li class="ms-1 logo" routerLink="home" style="cursor: pointer;"><img src="" alt="" />Sp</li>
-    <li routerLink="home" style="cursor: pointer;">Home</li>
-    <li routerLink="service" style="cursor: pointer;">Service</li>
-    <li class="hide_min_option" routerLink="gallery" style="cursor: pointer;">Gallery</li>
-    <li  style="cursor: pointer;" (click)="handleOrderRoute()">Order</li>
-    <li class="hide_min_option" style="cursor: pointer;" (click)="handleAminRoute()">Admin</li>
-    <li class="hide_min_option" style="cursor: pointer;" routerLink="help">Help</li>
-    <li class="select_option_phone" style="cursor: pointer;">
+    <li routerLink="home" style="cursor: pointer;" routerLinkActive="active">Home</li>
+    <li routerLink="service" style="cursor: pointer;" routerLinkActive="active">Service</li>
+    <li class="hide_min_option" routerLink="gallery" style="cursor: pointer;" routerLinkActive="active">Gallery</li>
+    <li  style="cursor: pointer;" (click)="handleOrderRoute()" routerLinkActive="active">Order</li>
+    <li class="hide_min_option" style="cursor: pointer;" (click)="handleAminRoute()" routerLinkActive="active">Admin</li>
+    <li class="hide_min_option" style="cursor: pointer;" routerLink="help" routerLinkActive="active">Help</li>
+    <li class="select_option_phone" style="cursor: pointer;" routerLinkActive="active">
      <select class="select-option border-0" (change)="handleRouting($event)">
   <option value="">More</option>
   <option value="gallery">Gallery</option>
@@ -21,7 +21,7 @@
     </li>
   </ul>
   <ul class="d-flex align-items-center list-unstyled gap-3 m-2">
-    <li class="hide_min_option" style="cursor: pointer;" (click)="handleSingUpAndLogin()">{{flag?'logout':'sing up'}}</li>
-    <li class="" routerLink="myOrder" style="cursor: pointer;">My Order</li>
+    <li class="hide_min_option" style="cursor: pointer;" (click)="handleSingUpAndLogin()" routerLinkActive="active">{{flag?'logout':'sing up'}}</li>
+    <li class="" routerLink="myOrder" style="cursor: pointer;" routerLinkActive="active">My Order</li>
   </ul>
 </div>

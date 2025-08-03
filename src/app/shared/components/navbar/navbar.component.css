@@ -11,6 +11,10 @@
   display: none;
 }
 
+li.active{
+border-bottom: 2px solid white;
+border-radius: 1%;
+}
 .select-option {
   background-color: #0d6efd;
   color: white;
