@@ -89,19 +89,23 @@ export class AddServiceComponent {
     }
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes['editServiceData'] && this.editServiceData) {
-      this.serviceForm.patchValue({
-        title: this.editServiceData.title,
-        description: this.editServiceData.description,
-        sharpyCount: this.editServiceData.sharpyCount,
-        ledScreenCount: this.editServiceData.ledScreenCount,
-        price: this.editServiceData.price,
-        btn: this.editServiceData.btn,
-        isActive: this.editServiceData.isActive,
-      });
-    }
+ ngOnChanges(changes: SimpleChanges) {
+  console.log(changes,'changes')
+  if (changes['editServiceData'] && changes['editServiceData'].currentValue) {
+    const data = changes['editServiceData'].currentValue;
+    this.serviceForm.patchValue({
+      title: data.title || '',
+      description: data.description || '',
+      sharpyCount: data.sharpyCount || '',
+      ledScreenCount: data.ledScreenCount || '',
+      price: data.price || '',
+      btn: data.btn || '',
+      isActive: data.isActive,
+    });
+    this.selectedFile = null;
   }
+}
+
 
   editService() {
     const rawValue = this.serviceForm.value;

@@ -85,8 +85,9 @@ export class ServicesComponent {
     });
   }
 
-  editService(service:any){
-    this.serviceData = service;
-    this.toggleForm = true;
-  }
+  editService(service: any) {
+  this.serviceData = { ...service }; // 🟢 new object = ngOnChanges will trigger
+  this.toggleForm = true; // 🔄 force *ngIf teardown
+}
+
 }
