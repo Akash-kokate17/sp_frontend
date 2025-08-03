@@ -4,8 +4,6 @@
 }
 
 .form-div {
-  position: relative;
-  top: 200px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;

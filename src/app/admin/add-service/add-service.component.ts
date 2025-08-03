@@ -31,13 +31,13 @@ export class AddServiceComponent {
   selectedFile: any;
   editServiceData: any;
 
-toggleFrom() {
-  this.serviceForm.reset();
-  this.selectedFile = null;
-  this.editServiceData = null;  // ✅ Reset edit state
-  this.formToggle = !this.formToggle;
-  this.sendFlagToService.emit(false);
-}
+  toggleFrom() {
+    this.serviceForm.reset();
+    this.selectedFile = null;
+    this.editServiceData = null; // ✅ Reset edit state
+    this.formToggle = !this.formToggle;
+    this.sendFlagToService.emit(false);
+  }
 
   constructor(private store: Store<{ service: any }>, private fb: FormBuilder) {
     this.serviceForm = this.fb.group({
@@ -48,7 +48,7 @@ toggleFrom() {
       price: new FormControl('', [Validators['required']]),
       btn: new FormControl('', [Validators['required']]),
       isActive: new FormControl('', [Validators['required']]),
-      serviceImgUpload: new FormControl('', [Validators['required']]),
+      serviceImgUpload: new FormControl(''),
     });
   }
 
@@ -73,6 +73,10 @@ toggleFrom() {
     }
 
     this.store.dispatch(uploadService({ formData: formData }));
+    for (let pair of formData.entries()) {
+      console.log(`${pair[0]}:`, pair[1],'check');
+    }
+
     Swal.fire('service added successfully');
     this.serviceForm.reset();
   }
@@ -81,7 +85,7 @@ toggleFrom() {
     const input = event.target;
     if (input.files && input.files.length > 0) {
       this.selectedFile = input.files[0];
-      console.log(input.files);
+      console.log(input.files, this.selectedFile, 'file');
     }
   }
 
@@ -100,7 +104,6 @@ toggleFrom() {
   }
 
   editService() {
-
     const rawValue = this.serviceForm.value;
     const formData = new FormData();
 

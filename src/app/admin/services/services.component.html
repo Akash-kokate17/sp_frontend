@@ -18,7 +18,7 @@
         <img
           *ngIf="isImage(service.serviceImgUpload)"
           [src]="
-            'http://localhost:5000/serviceUploadsImg/' +
+            'https://sp-backend-uky8.onrender.com/serviceUploadsImg/' +
             service.serviceImgUpload
           "
           alt=""
@@ -38,7 +38,7 @@
         <p><span>Led Count:</span>{{ service.ledScreenCount }}</p>
         <p><span>Sharpy Count:</span>{{ service.sharpyCount }}</p>
       </div>
-      <div class="d-flex justify-content-evenly mt-2">
+      <div class="d-flex justify-content-evenly mt-2 buttons-div">
         <p><button class="btn btn-primary">event</button></p>
         <p><button class="btn btn-success"(click)="editService(service)">Edit</button></p>
         <p><button class="btn btn-danger" (click)="deleteEvent(service._id)">Delete</button></p>
