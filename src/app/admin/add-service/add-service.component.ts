@@ -48,7 +48,7 @@ export class AddServiceComponent {
       price: new FormControl('', [Validators['required']]),
       btn: new FormControl('', [Validators['required']]),
       isActive: new FormControl('', [Validators['required']]),
-      serviceImgUpload: new FormControl(''),
+      serviceImgUpload: new FormControl('',[Validators['required']]),
     });
   }
 
