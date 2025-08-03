@@ -42,7 +42,7 @@ export class ServiceComponent {
   }
 
   getSanitizedUrl(fileName: string): SafeResourceUrl {
-    const url = 'http://localhost:5000/serviceUploadsImg/' + fileName;
+    const url = 'https://sp-backend-uky8.onrender.com/serviceUploadsImg/' + fileName;
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 }
