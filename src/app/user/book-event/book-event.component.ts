@@ -47,7 +47,7 @@ export class BookEventComponent {
       name: new FormControl('', [Validators.required]),
       eventType: new FormControl('', [Validators.required]),
       location: new FormControl('', [Validators.required]),
-      clientMsg: new FormControl('', [Validators.required]),
+      clientMsg: new FormControl('',),
       sharpyCount: new FormControl('', [Validators.required]),
       ledScreenCount: new FormControl('', [Validators.required]),
       serviceName: new FormControl('', [Validators.required]),
