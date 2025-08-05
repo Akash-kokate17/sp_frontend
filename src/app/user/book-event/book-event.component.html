@@ -18,7 +18,12 @@
         >
       </p>
       <p class="m-1">
-        Email:<input type="text" class="form-control" formControlName="email" readonly/>
+        Email:<input
+          type="text"
+          class="form-control"
+          formControlName="email"
+          readonly
+        />
         <span
           class="text-danger"
           *ngIf="eventForm.controls['email'].hasError('pattern')"
@@ -124,7 +129,11 @@
           class="text-danger"
           >Phone number is required</span
         >
-        <span class="text-danger" *ngIf="eventForm.controls['phoneNo'].hasError('pattern')">Invalid phone number</span>
+        <span
+          class="text-danger"
+          *ngIf="eventForm.controls['phoneNo'].hasError('pattern')"
+          >Invalid phone number</span
+        >
       </p>
       <p class="m-1">
         Location:<input
@@ -159,11 +168,7 @@
           class="form-control"
           formControlName="eventBookingDate"
         />
-        <span
-          class="text-danger"
-          *ngIf="eventForm.controls['eventBookingDate'].hasError('pattern')"
-          >Enter valid Date</span
-        >
+
         <span
           class="text-danger"
           *ngIf="
