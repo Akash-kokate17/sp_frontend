@@ -32,7 +32,6 @@ export class BookEventComponent {
     private store: Store<{ event: any }>,
     private singUpService: SignUpService
   ) {
-    
     this.userEmail = this.singUpService.get('user').email;
 
     this.eventForm = this.fb.group({
@@ -44,12 +43,7 @@ export class BookEventComponent {
         Validators.required,
         Validators.pattern(/^(\+91[\-\s]?)?[6-9]\d{9}$/),
       ]),
-      eventBookingDate: new FormControl('', [
-        Validators.required,
-        Validators.pattern(
-          /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/
-        ),
-      ]),
+      eventBookingDate: new FormControl('', [Validators.required]),
       name: new FormControl('', [Validators.required]),
       eventType: new FormControl('', [Validators.required]),
       location: new FormControl('', [Validators.required]),
